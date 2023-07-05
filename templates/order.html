@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Order Page {% endblock %}
+{% block body %}
+
+<div class="y"></div>
+{% for message in messages %}
+<h2>{{message}}</h2>
+{% endfor %}
+<h3 class="sub-heading">Order Now</h3>
+  <h1 class="heading">Free And Fast</h1>
+<section class="order" id="order">
+<form action=""method="post">{% csrf_token %}
+<div class="inputBox">
+<div class="input">
+<span>Your Name</span>
+<input type="text" name="name" placeholder="Enter Your Name">
+</div>
+<div class="input">
+<span>Your Number</span>
+<input type="number" name="number" required="required" placeholder="Enter Your Number">
+</div>
+</div>
+
+<div class="inputBox">
+<div class="input">
+<span>Your Order</span>
+<input type="text" name="foodName" placeholder="Enter Food Name">
+</div>
+<div class="input">
+<span>Additional Food</span>
+<input type="text" name="food" placeholder="Extra With Food">
+</div>
+</div>
+
+<div class="inputBox">
+<div class="input">
+<span>How Much</span>
+<input type="text" name="quantity" placeholder="How Many Orders">
+</div>
+<div class="input">
+<span>Date and Time</span>
+<input type="datetime-local" name="DateTime">
+</div>
+</div>
+
+<div class="inputBox">
+<div class="input">
+<span>Your Address</span>
+<textarea name="address" cols="30" rows="10" placeholder="enter your Address Please"></textarea>
+</div>
+<div class="input">
+<span>Your Message</span>
+<textarea name="message" id="" cols="30" rows="10" placeholder="enter your message Please"></textarea>
+</div>
+</div>
+<input type="submit" value="Order Now" class="btn">
+</form>
+
+</section>
+{% endblock body %}

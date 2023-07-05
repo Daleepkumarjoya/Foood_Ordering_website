@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Home Page {% endblock %}
+
+{% block body %}
+<div class="y"></div>
+ {% for message in messages %}
+    <h2>{{message}}</h2>
+    {% endfor %}
+<marquee ommouseover="stop()" onmouseout="start()">
+    <h1>WelCome to DK Foods</h1>
+</marquee>
+{% for i in HomeModelPage %}
+
+<section class="home" id="home">
+  <div class="home-slider">
+   <div class="swiper-wrapper wrapper">
+   <div class="swiper-slide slide">
+    <div class="content">
+   <span>Our Special dish</span>
+   <h3>{{i.name}}</h3>
+   <h3>${{i.price}}</h3>
+   <p>{{i.Desc | slice:"200" | capfirst }}...</p>
+  <a href="/orderPage/" class="btn">Order Now</a>
+        <a href="/ReadMorePage/{{i.Home_slug}}" class="btn">Read More</a>
+  </div>
+<div class="image">
+<img src="/media/{{i.image}}" alt="img">
+</div>
+   </div>
+    </div>
+   </div>
+</section>
+{% endfor %}
+{% endblock body %}

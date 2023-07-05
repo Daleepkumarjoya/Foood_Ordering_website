@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Login Page {% endblock %}
+{% block body %}
+
+<div id="y">
+    {% for message in messages %}
+    <h2>{{message}}</h2>
+    {% endfor %}
+                <div id="l">
+                    <h1 style=" text-align: center; color: #2c7ad6;">LOGIN PAGE</h1>
+                    <div id="student">
+                        <form method="post">{% csrf_token %}
+                            USER NAME <br><input type="text" name="username" class="t"/><br>
+                            PASSWORD <br><input type="password" name="password" class="t"/><br>
+                            <a href=""><input type="submit" value="LogIn" style="border: none;width: 50%;height: 30px; background-color: #2c7ad6;"></a>
+                        </form>
+                    </div>
+                </div>
+              </div>
+
+
+{% endblock body %}

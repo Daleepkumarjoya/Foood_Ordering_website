@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Dishes Page {% endblock %}
+{% block body %}
+<div class="y" xmlns="http://www.w3.org/1999/html"></div>
+<h3 class="sub-heading">Our Dishes</h3>
+  <h1 class="heading">Popular Dishes</h1>
+<section class="dishes" id="dishes">
+
+{% for i in dishModel %}
+  <div class="box-container">
+ <div class="box">
+<img src="/media/{{i.image}}" alt="img">
+<h2><span>{{i.name}}</span></h2>
+<h2><span>${{i.price}}</span></h2>
+     <p>{{i.Desc | slice:"50" | capfirst }}...</p>
+<a href="/orderPage/" class="btn">Order Now</a>
+     <a href="/ReadMorePage/{{i.Home_slug}}" class="btn">Read More</a>
+
+</div>
+</div>
+
+{% endfor %}
+
+</section>
+
+<nav aria-label="Page navigation example">
+  <ul class="pagination">
+    {% if dishModel.has_previous %}
+    <li class="page-item"><a class="page-link" href="/DishesPage/?page=1" tabindex="-1">First</a></li>
+    <li class="page-item"><a class="page-link" href="/DishesPage/?page={{dishModel.previous_page_number}}">Previous</a></li>
+    {% endif %}
+    {% for n in totalPageNumber %}
+    <li class="page-item"><a class="page-link" href="/DishesPage/?page={{n}}">{{n}}</a></li>
+    {% endfor %}
+    {% if dishModel.has_next %}
+    <li class="page-item"><a class="page-link" href="/DishesPage/?page={{dishModel.next_page_number}}">Next</a></li>
+    <li class="page-item"><a class="page-link" href="/DishesPage/?page={{lastpage}}">Last</a></li>
+    {% endif %}
+  </ul>
+</nav>
+
+
+{% endblock body %}

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Review Page {% endblock %}
+{% block body %}
+
+<div class="y"></div>
+{% for message in messages %}
+<h1>{{message}}</h1>
+{% endfor %}
+<h3 class="sub-heading">We Will Welcome to Your Query</h3>
+  <h1 class="heading">Contact Us </h1>
+<section class="order" id="order">
+<form method="post">{% csrf_token %}
+<div class="inputBox">
+<div class="input">
+<span>Your Name</span>
+<input type="text" name="name" required="required" placeholder="Enter Your Name">
+</div>
+<div class="input">
+<span>Your Number</span>
+<input type="number" required="required" name="number" placeholder="Enter Your Number">
+</div>
+</div>
+
+
+<div class="inputBox">
+<div class="input">
+<span>Your Address</span>
+<textarea name="address" cols="30" rows="10" placeholder="enter your Address Please"></textarea>
+</div>
+<div class="input">
+<span>Your Query Please</span>
+<textarea name="query" id="" required="required" cols="30" rows="10" placeholder="enter your Query Please"></textarea>
+</div>
+</div>
+<input type="submit" value="Submit Now" class="btn">
+</form>
+
+</section>
+
+
+
+{% endblock body %}

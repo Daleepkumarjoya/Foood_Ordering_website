@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Read More Descriptions Page {% endblock %}
+
+{% block body %}
+
+<div class="y"></div>
+<h1 class="sub-heading">Descriptions About</h1>
+  <h1 class="heading">Product?</h1>
+<section class="about" id="about">
+<div class="row">
+ <div class="image">
+ <img src="/media/{{More.image}}" alt="img">
+</div>
+<div class="content">
+  <h3>{{More.name}} </h3>
+   <h3>${{More.price}} </h3>
+<p>
+    {{More.Desc}}
+</p>
+
+<a href="/orderPage/" class="btn">Order Now</a>
+</div>
+
+</div>
+
+</section>
+
+{% endblock body %}

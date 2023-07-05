@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Menu Page {% endblock %}
+{% block body %}
+
+<div class="y"></div>
+<h3 class="sub-heading">Our Menu</h3>
+  <h1 class="heading">Today's Speciality</h1>
+<section class="menu" id="menu">
+{% for i in menuModel %}
+<div class="box-container">
+<div class="box">
+<div class="image">
+ <img src="/media/{{i.image}}" alt="img">
+</div>
+<h2><div>{{i.name}}</div></h2>
+<h3><div><p>{{i.Desc | slice:"50" | capfirst }}...</p></div></h3>
+<h2><div><span class="price">${{i.price}}</span></div></h2>
+<div><a href="/orderPage/" class="btn">Order Now</a>
+</div>
+</div>
+</div>
+
+{% endfor %}
+
+</section>
+
+
+{% endblock body %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} About Page {% endblock %}
+{% block body %}
+
+<div class="y"></div>
+<h3 class="sub-heading">About Us</h3>
+  <h1 class="heading">Why choose Us?</h1>
+<section class="about" id="about">
+    {% for i in aboutModel %}
+<div class="row">
+ <div class="image">
+ <img src="/media/{{i.image}}" alt="img">
+</div>
+<div class="content">
+  <h3>Best Food In The Country </h3>
+<p>{{i.Desc}} </p>
+<div class="container"><span>{{i.delivery}}</span></div>
+<div class="container"><span>{{i.payment}}</span></div>
+<div v><span>{{i.service}}</span></div>
+</div>
+
+</div>
+    {% endfor %}
+</section>
+
+{% endblock body %}

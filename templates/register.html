@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Register Page {% endblock %}
+{% block body %}
+
+<div id="y">
+    {% for message in messages %}
+    <h2>{{message}}</h2>
+    {% endfor %}
+                <div id="l">
+                    <h1 style=" text-align: center; color: #2c7ad6;">REGISTERATION KNOW YOURSELF</h1>
+                    <div id="student">
+                        <form method="post">{% csrf_token %}
+                            LAST_NAME <br><input type="text" name="first_name" class="t"/><br>
+                            FIRST_NAME <br><input type="text" name="last_name" class="t"/><br>
+                            USER NAME <br><input type="text" name="user_name" class="t"/><br>
+                            Email <br><input type="text" name="email" class="t"/><br>
+                            PASSWORD <br><input type="password" name="password" class="t"/><br>
+                            CONFIRM-PASSWORD <br><input type="password" name="Cpassword" class="t"/><br>
+                            <a href=""><input type="submit" value="Register" style="border: none;width: 50%;height: 30px; background-color: #2c7ad6;"></a>
+                        </form>
+                    </div>
+                </div>
+              </div>
+
+{% endblock body %}
